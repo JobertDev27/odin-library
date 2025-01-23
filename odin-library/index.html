@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Library</title>
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="mediaQuery.css">
+        <script defer src="app.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div><h1>BINGE LIST</h1></div>
+        </header>
+        <aside><button class="add-button">+</button></aside>
+
+        <main>
+            <!-- LIBRARY ITEMS GO HERE  -->
+        </main>
+    
+        <form id="add-book" class="hidden">
+            <div><button type="button" class="cancel">X</button></div>
+            <div>
+               <div><label for="title">Title:</label></div>
+               <div><input type="text" name="ti" id="title" placeholder="Title"></div>
+            </div>
+
+            <div>
+               <div><label for="author">Author:</label></div>
+               <div><input type="text" name="au" id="author" placeholder="Author"></div>
+            </div>
+
+            <div>
+               <div><label for="pages">Pages:</label></div>
+               <div><input type="number" name="pa" id="pages" placeholder="0"></div>
+            </div>
+
+            <div>
+                <label for="status">Read:</label>
+                <input type="checkbox" name="st" id="status">
+            </div>
+
+            <button id="submit">Submit</button>
+        </form>
+
+         
+    </body>
+</html>
