@@ -26,17 +26,19 @@ let books = [
         pages : 1137,
         statusRead : false
     }
-];
+]
 
-function book(title, author, pages, statusRead) {
+class book {
+    constructor(title, author, pages, statusRead){
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.statusRead = statusRead;
+    }
 }
 
-function addBook () {
-    for (i = 0; i < books.length; i++) {
+function addBook() {
+    books.forEach((book, index) => {
         const div = document.createElement("div");
         const h2 = document.createElement("h2");
         const p = document.createElement("p");
@@ -44,25 +46,24 @@ function addBook () {
         const removeBtn = document.createElement("button");
 
         div.classList.add("item");
-        h2.textContent = books[i].title;
-        p.textContent = `by ${books[i].author}`;
-        p2.textContent = `${books[i].pages} pages`;
+        h2.textContent = book.title;
+        p.textContent = `by ${book.author}`;
+        p2.textContent = `${book.pages} pages`;
         removeBtn.classList.add("remove-item");
         removeBtn.textContent = "X";
 
-        div.append(h2);
-        div.append(p);
-        div.append(p2);
-        div.append(removeBtn);
+        div.append(h2, p, p2, removeBtn);
         main.append(div);
 
         removeBtn.addEventListener("click", () => {
-            removeBtn.parentElement.remove();
+            books.splice(index, 1);
+            div.remove();
         });
-    };
+    });
 
     addStatus();
-};
+}
+
 
 function addStatus() {
     for (i = 0; i < main.childElementCount; i++) {
